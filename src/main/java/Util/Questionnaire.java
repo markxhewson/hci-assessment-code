@@ -1,13 +1,14 @@
 package Util;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class Questionnaire {
 
-    private HashMap<String, String> questionsAndAnswers;
+    private LinkedHashMap<String, String> questionsAndAnswers;
 
     public Questionnaire() {
-        this.questionsAndAnswers = new HashMap<>();
+        this.questionsAndAnswers = new LinkedHashMap<>();
         generateQuestions();
     }
 
@@ -28,11 +29,11 @@ public class Questionnaire {
         this.getQuestionsAndAnswers().put("If yes, where and how long for?", "");
     }
 
-    public HashMap<String, String> getQuestionsAndAnswers() {
+    public LinkedHashMap<String, String> getQuestionsAndAnswers() {
         return questionsAndAnswers;
     }
 
-    public void setQuestionsAndAnswers(HashMap<String, String> questionsAndAnswers) {
+    public void setQuestionsAndAnswers(LinkedHashMap<String, String> questionsAndAnswers) {
         this.questionsAndAnswers = questionsAndAnswers;
     }
 }
