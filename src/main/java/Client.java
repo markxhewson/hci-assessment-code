@@ -1,7 +1,9 @@
+import Util.Questionnaire;
 import Util.TimeUtil;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Client {
 
@@ -19,7 +21,23 @@ public class Client {
     }
 
     public void sendQuestionnaire() {
-        // TODO: send questionnaire to user to complete
+        Questionnaire questionnaire = new Questionnaire();
+
+        questionnaire.getQuestionsAndAnswers().forEach((question, answer) -> {
+            System.out.println("Q: " + question);
+
+            Scanner in = new Scanner(System.in);
+            String input = in.nextLine();
+
+            questionnaire.getQuestionsAndAnswers().put(question, input);
+        });
+
+        System.out.println("You completed the questionnaire!");
+        questionnaire.getQuestionsAndAnswers().forEach((question, answer) -> {
+            System.out.println("Question: " + question);
+            System.out.println("Answer: " + answer + "\n");
+        });
+
         this.setQuestionnaireCompleted(true);
     }
 

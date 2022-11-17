@@ -54,6 +54,12 @@ public class Course {
         this.specialCourse = specialCourse;
     }
 
+    public void addCourseSession(Session session) {
+        if (this.getCourseSessions().size() < 36) {
+            this.getCourseSessions().add(session);
+        }
+    }
+
     public LinkedList<Session> getCourseSessions() {
         return courseSessions;
     }
