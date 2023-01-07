@@ -1,8 +1,8 @@
 import java.util.LinkedList;
 
-public class PurchasedCourses<T> extends LinkedList<T> {
+public class PurchasedCoursesList<T> extends LinkedList<T> {
 
-    public PurchasedCourses() {
+    public PurchasedCoursesList() {
         super();
     }
 

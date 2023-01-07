@@ -1,13 +1,12 @@
 package Util;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-public class Questionnaire {
+public class DemographicQuestionnaire {
 
     private LinkedHashMap<String, String> questionsAndAnswers;
 
-    public Questionnaire() {
+    public DemographicQuestionnaire() {
         this.questionsAndAnswers = new LinkedHashMap<>();
         generateQuestions();
     }

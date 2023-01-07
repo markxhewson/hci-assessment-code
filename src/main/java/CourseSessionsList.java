@@ -1,8 +1,8 @@
 import java.util.LinkedList;
 
-public class CourseSessions<T> extends LinkedList<T> {
+public class CourseSessionsList<T> extends LinkedList<T> {
 
-    public CourseSessions() {
+    public CourseSessionsList() {
         super();
     }
 

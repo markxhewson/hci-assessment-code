@@ -8,7 +8,7 @@ public class Course {
     private Client client;
     private Consultant consultant;
     private boolean specialCourse;
-    private CourseSessions<Session> courseSessions;
+    private CourseSessionsList<Session> courseSessions;
 
     public Course(long courseID) {
         this.courseID = courseID;

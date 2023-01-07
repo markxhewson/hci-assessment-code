@@ -1,8 +1,6 @@
-import Util.Questionnaire;
+import Util.DemographicQuestionnaire;
 import Util.TimeUtil;
-import storage.SQL;
 
-import java.sql.ResultSet;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -11,11 +9,11 @@ public class Client {
     private long clientID;
     protected long reminderForNextCourse;
     protected boolean questionnaireCompleted;
-    private Questionnaire questionnaire;
+    private DemographicQuestionnaire questionnaire;
     protected boolean bandPurchasedThisMonth;
     protected long timeTillNextBandPurchase;
     protected boolean consultationCompleted;
-    protected PurchasedCourses<Course> coursesPurchased;
+    protected PurchasedCoursesList<Course> coursesPurchased;
     protected SuggestedCourses<Course> suggestedCourses;
 
     public Client(long clientID) {
@@ -23,7 +21,7 @@ public class Client {
     }
 
     public void sendQuestionnaire() {
-        Questionnaire questionnaire = new Questionnaire();
+        DemographicQuestionnaire questionnaire = new DemographicQuestionnaire();
 
         questionnaire.getQuestionsAndAnswers().forEach((question, answer) -> {
             System.out.println("Question: " + question);
@@ -96,11 +94,11 @@ public class Client {
         return suggestedCourses;
     }
 
-    public Questionnaire getQuestionnaire() {
+    public DemographicQuestionnaire getQuestionnaire() {
         return questionnaire;
     }
 
-    public void setQuestionnaire(Questionnaire questionnaire) {
+    public void setQuestionnaire(DemographicQuestionnaire questionnaire) {
         this.questionnaire = questionnaire;
     }
 
