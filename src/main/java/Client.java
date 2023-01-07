@@ -10,6 +10,7 @@ public class Client {
     protected long clientID;
     protected long reminderForNextCourse;
     protected boolean questionnaireCompleted;
+    private Questionnaire questionnaire;
     protected boolean bandPurchasedThisMonth;
     protected long timeTillNextBandPurchase;
     protected boolean consultationCompleted;
@@ -39,6 +40,7 @@ public class Client {
         });
 
         this.setQuestionnaireCompleted(true);
+        this.setQuestionnaire(questionnaire);
     }
 
     public void sendCourseReminder() {
@@ -99,5 +101,13 @@ public class Client {
 
     public void setSuggestedCourses(LinkedList<Course> suggestedCourses) {
         this.suggestedCourses = suggestedCourses;
+    }
+
+    public Questionnaire getQuestionnaire() {
+        return questionnaire;
+    }
+
+    public void setQuestionnaire(Questionnaire questionnaire) {
+        this.questionnaire = questionnaire;
     }
 }
