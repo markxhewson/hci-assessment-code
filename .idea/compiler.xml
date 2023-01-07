@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="KF5008-assessment" />
+        <module name="hci-assessment-code" />
       </profile>
     </annotationProcessing>
   </component>

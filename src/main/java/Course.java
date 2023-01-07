@@ -8,7 +8,7 @@ public class Course {
     private Client client;
     private Consultant consultant;
     private boolean specialCourse;
-    private LinkedList<Session> courseSessions;
+    private CourseSessions<Session> courseSessions;
 
     public Course(long courseID) {
         this.courseID = courseID;
@@ -16,6 +16,12 @@ public class Course {
 
     public String getCourseName() {
         return courseName;
+    }
+
+    public void addCourseSession(Session session) {
+        if (this.getCourseSessions().size() < 36) {
+            this.getCourseSessions().add(session);
+        }
     }
 
     public void setCourseName(String courseName) {
@@ -54,17 +60,7 @@ public class Course {
         this.specialCourse = specialCourse;
     }
 
-    public void addCourseSession(Session session) {
-        if (this.getCourseSessions().size() < 36) {
-            this.getCourseSessions().add(session);
-        }
-    }
-
     public LinkedList<Session> getCourseSessions() {
         return courseSessions;
-    }
-
-    public void setCourseSessions(LinkedList<Session> courseSessions) {
-        this.courseSessions = courseSessions;
     }
 }

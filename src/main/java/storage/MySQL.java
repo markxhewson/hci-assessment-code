@@ -29,8 +29,8 @@ public class MySQL {
 
     public void disconnect() {
         try {
-            if (this.connection != null && !this.connection.isClosed()) {
-                this.connection.close();
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -38,12 +38,12 @@ public class MySQL {
     }
 
     public boolean isConnectionOpen() throws SQLException {
-        return !this.connection.isClosed();
+        return !connection.isClosed();
     }
 
     public Connection getConnection() {
         try {
-            if (this.connection == null || this.connection.isClosed()) {
+            if (connection == null || connection.isClosed()) {
                 this.setConnection(DriverManager.getConnection(this.url, this.username, this.password));
             }
         } catch (SQLException e) {

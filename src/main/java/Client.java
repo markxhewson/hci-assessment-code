@@ -1,31 +1,32 @@
 import Util.Questionnaire;
 import Util.TimeUtil;
+import storage.SQL;
 
-import java.util.ArrayList;
+import java.sql.ResultSet;
 import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Client {
 
-    protected long clientID;
+    private long clientID;
     protected long reminderForNextCourse;
     protected boolean questionnaireCompleted;
     private Questionnaire questionnaire;
     protected boolean bandPurchasedThisMonth;
     protected long timeTillNextBandPurchase;
     protected boolean consultationCompleted;
-    protected LinkedList<Course> coursesPurchased;
-    protected LinkedList<Course> suggestedCourses;
+    protected PurchasedCourses<Course> coursesPurchased;
+    protected SuggestedCourses<Course> suggestedCourses;
 
     public Client(long clientID) {
-        this.clientID = clientID;
+        this.setClientID(clientID);
     }
 
     public void sendQuestionnaire() {
         Questionnaire questionnaire = new Questionnaire();
 
         questionnaire.getQuestionsAndAnswers().forEach((question, answer) -> {
-            System.out.println("Q: " + question);
+            System.out.println("Question: " + question);
 
             Scanner in = new Scanner(System.in);
             String input = in.nextLine();
@@ -91,16 +92,8 @@ public class Client {
         return coursesPurchased;
     }
 
-    public void setCoursesPurchased(LinkedList<Course> coursesPurchased) {
-        this.coursesPurchased = coursesPurchased;
-    }
-
     public LinkedList<Course> getSuggestedCourses() {
         return suggestedCourses;
-    }
-
-    public void setSuggestedCourses(LinkedList<Course> suggestedCourses) {
-        this.suggestedCourses = suggestedCourses;
     }
 
     public Questionnaire getQuestionnaire() {
@@ -109,5 +102,13 @@ public class Client {
 
     public void setQuestionnaire(Questionnaire questionnaire) {
         this.questionnaire = questionnaire;
+    }
+
+    public long getClientID() {
+        return clientID;
+    }
+
+    public void setClientID(long clientID) {
+        this.clientID = clientID;
     }
 }
